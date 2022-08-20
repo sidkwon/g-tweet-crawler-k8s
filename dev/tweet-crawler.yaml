@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: tweet-crawler
-        image: us-central1-docker.pkg.dev/arched-iterator-357101/tweet-crawler-repo/tweet-crawler:9be17a2
+        image: us-central1-docker.pkg.dev/arched-iterator-357101/tweet-crawler-repo/tweet-crawler:f339e0f
       serviceAccountName: tweet-crawler
       nodeSelector:
         iam.gke.io/gke-metadata-server-enabled: "true"
