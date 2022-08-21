@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tweet-crawler
+  labels:
+    app: tweet-crawler
+    namespace: tweet-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tweet-crawler
+  template:
+    metadata:
+      labels:
+        app: tweet-crawler
+    spec:
+      containers:
+      - name: tweet-crawler
+        image: us-central1-docker.pkg.dev/arched-iterator-357101/tweet-crawler-repo/tweet-crawler:c3dde4c
+      serviceAccountName: tweet-crawler
+      nodeSelector:
+        iam.gke.io/gke-metadata-server-enabled: "true"
